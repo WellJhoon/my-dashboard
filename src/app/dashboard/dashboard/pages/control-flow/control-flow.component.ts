@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component, signal } from '@angular/core';
+import { __values } from 'tslib';
 
 @Component({
   selector: 'app-control-flow',
   standalone: true,
-  imports: [RouterModule],
+  imports: [CommonModule],
   templateUrl: './control-flow.component.html',
 })
 export class ControlFlowComponent {
-  constructor() {}
+  public showContent = signal(true);
+
+  public toggleContent() {
+    this.showContent.update((value) => !value);
+  }
 }
