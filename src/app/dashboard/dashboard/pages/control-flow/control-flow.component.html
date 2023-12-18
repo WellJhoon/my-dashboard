@@ -1,6 +1,6 @@
+<app-title title="Control Flow"/>
 
 <section class="grid grid-cols-1 md:grid-cols-2 gap-3">
-
     <!-- ngif @if-->
   <div class="bg-white rounded shadow p-10">
     <h2 class="text-2xl font-bold mb-5">
@@ -18,4 +18,28 @@
     </h2>
   </div>
 
+<!--For-->
+
+  <div class="bg-white rounded shadow p-10">
+
+    <ul>
+      @for (framework of frameworks(); track $index) {
+        <li>{{framework}}</li>
+      }
+    </ul>
+
+  </div>
+
+  <div class="bg-white rounded shadow p-10">
+    <ul>
+      @for (framework of frameworks2(); track $index) {
+        <li>{{framework}}</li>
+      }@empty {
+        <li>No hay ningun FrameWork agregado</li>
+      }
+    </ul>
+  </div>
+
 </section>
+
+
